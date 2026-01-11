@@ -2,59 +2,68 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Nagode Transfert</title>
+    <title>Nagode Transfert – Transport & Envoi de colis</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <h1>NAGODE TRANSFERT</h1>
-    <p>Transport et transfert de colis en toute sécurité</p>
+<!-- HEADER -->
+<header class="hero">
+    <div class="hero-content">
+        <h1>NAGODE TRANSFERT</h1>
+        <p>Transport et envoi de colis en toute confiance</p>
+        <div class="hero-buttons">
+            <a href="suivi.html" class="btn">Suivi de colis</a>
+            <a href="#contact" class="btn secondary">Nous contacter</a>
+        </div>
+    </div>
 </header>
 
-<section>
-    <h2>À propos de nous</h2>
-    <p>
-        Nagode Transfer est une entreprise spécialisée dans le transport
-        et l’envoi de colis à l’échelle nationale et internationale.
-        Nous assurons un service rapide, fiable et sécurisé.
-    </p>
-</section>
-
-<section>
+<!-- SERVICES -->
+<section class="services">
     <h2>Nos services</h2>
-    <ul>
-        <li>Transport de colis et marchandises</li>
-        <li>Envoi national et international</li>
-        <li>Suivi et gestion des colis</li>
-        <li>Service client réactif</li>
-    </ul>
+    <div class="grid">
+        <div class="card">🚚 Transport de colis</div>
+        <div class="card">🌍 Envoi national & international</div>
+        <div class="card">📦 Suivi et gestion</div>
+        <div class="card">🤝 Service client</div>
+    </div>
 </section>
 
-<section>
+<!-- DESTINATIONS -->
+<section class="destinations">
     <h2>Nos destinations</h2>
     <p>
-        Lomé, Notsè, Atakpamé, Anié, Blita, Sokodé, Kara, Mango, Dapaong  
+        Lomé, Notsè, Atakpamé, Kpalimé, Anié, Blita, Sokodé, Tchamba, Kaboli, Kara, Mango, Dapaong 
         <br>
-        Accra, Kasoa, Côte d’Ivoire (et bientôt Burkina Faso, Bénin)
+        Accra, Kasoa, Côte d’Ivoire (et bientôt Burkina Faso, Bénin))
     </p>
 </section>
 
-<section>
-    <h2>Contact</h2>
-    <p>
-        📞 Téléphone : <strong>+228 71 71 11 37</strong><br>
-        📍 Siège : Sokodé
-    </p>
+<!-- MAP -->
+<section class="map">
+    <h2>Nous localiser</h2>
+    <iframe 
+        src="COLLE_ICI_TA_CARTE_GOOGLE_MAPS"
+        width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
+    </iframe>
+</section>
 
-    <a class="btn" href="https://wa.me/22871711137" target="_blank">
-        Nous contacter sur WhatsApp
-    </a>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <h2>Contactez-nous</h2>
+
+    <form action="https://formspree.io/f/XXXXXX" method="POST">
+        <input type="text" name="nom" placeholder="Votre nom" required>
+        <input type="email" name="email" placeholder="Votre email" required>
+        <textarea name="message" placeholder="Votre message" required></textarea>
+        <button class="btn">Envoyer</button>
+    </form>
 </section>
 
 <footer>
-    <p>© 2026 Nagode Transfer - Tous droits réservés</p>
+    © 2026 Nagode Transfert – Tous droits réservés
 </footer>
 
 </body>
