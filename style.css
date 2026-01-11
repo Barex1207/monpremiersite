@@ -5,42 +5,70 @@ body {
     color: #333;
 }
 
-header {
-    background: #0f172a;
+.hero {
+    background: linear-gradient(rgba(0,30,60,0.7), rgba(0,30,60,0.7)),
+                url('images/hero.jpg');
+    background-size: cover;
     color: white;
-    padding: 40px;
     text-align: center;
+    padding: 80px 20px;
 }
 
-section {
-    padding: 30px;
-    margin: 20px;
-    background: white;
-    border-radius: 8px;
+.hero h1 {
+    font-size: 42px;
 }
 
-h2 {
-    color: #0f172a;
-}
-
-ul {
-    padding-left: 20px;
+.hero-buttons {
+    margin-top: 20px;
 }
 
 .btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 12px 20px;
-    background: #25D366;
+    background: #0055a4;
     color: white;
+    padding: 12px 20px;
     text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-block;
+}
+
+.btn.secondary {
+    background: #25D366;
+}
+
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.services .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.contact form {
+    max-width: 400px;
+    margin: auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
 }
 
 footer {
+    background: #001e3c;
+    color: white;
     text-align: center;
     padding: 15px;
-    background: #0f172a;
-    color: white;
 }
