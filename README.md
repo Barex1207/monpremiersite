@@ -1,61 +1,38 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Nagode Transfert</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+# Nagode Transfert
 
-<header>
-    <h1>NAGODE TRANSFERT</h1>
-    <p>Transport et transfert de colis en toute sécurité</p>
-</header>
+![Logo Nagode Transfert](images/logo.png.jpg)
 
-<section>
-    <h2>À propos de nous</h2>
-    <p>
-        Nagode Transfer est une entreprise spécialisée dans le transport
-        et l’envoi de colis à l’échelle nationale et internationale.
-        Nous assurons un service rapide, fiable et sécurisé.
-    </p>
-</section>
+Site web de réservation de bus, suivi de colis et transfert d'argent pour l'Afrique de l'Ouest.
 
-<section>
-    <h2>Nos services</h2>
-    <ul>
-        <li>Transport de colis et marchandises</li>
-        <li>Envoi national et international</li>
-        <li>Suivi et gestion des colis</li>
-        <li>Service client réactif</li>
-    </ul>
-</section>
+## 🚀 Fonctionnalités
 
-<section>
-    <h2>Nos destinations</h2>
-    <p>
-        Lomé, Notsè, Atakpamé, Anié, Blita, Sokodé, Kara, Mango, Dapaong  
-        <br>
-        Accra, Kasoa, Côte d’Ivoire (et bientôt Burkina Faso, Bénin)
-    </p>
-</section>
+### Pour les utilisateurs
+- ✅ Recherche et réservation de bus
+- ✅ Suivi de colis avec numéros locaux
+- ✅ Calculateur de tarifs
+- ✅ Interface responsive
+- ✅ Réservation en ligne
 
-<section>
-    <h2>Contact</h2>
-    <p>
-        📞 Téléphone : <strong>+228 71 71 11 37</strong><br>
-        📍 Siège : Sokodé
-    </p>
+### Pour l'administration
+- ✅ Gestion des horaires
+- ✅ Gestion des bus
+- ✅ Gestion des réservations
+- ✅ Interface d'administration
 
-    <a class="btn" href="https://wa.me/22871711137" target="_blank">
-        Nous contacter sur WhatsApp
-    </a>
-</section>
+## 🌍 Pays desservis
+- Bénin
+- Ghana
+- Togo
+- Burkina Faso
+- Côte d'Ivoire
 
-<footer>
-    <p>© 2026 Nagode Transfer - Tous droits réservés</p>
-</footer>
+## 🛠️ Technologies utilisées
 
-</body>
-</html>
+- **Frontend** : HTML5, CSS3, JavaScript
+- **Backend** : PHP
+- **Base de données** : MySQL
+- **Design** : CSS Grid, Flexbox
+- **Icônes** : Font Awesome
+- **Polices** : Google Fonts (Montserrat, Open Sans)
+
+## 📁 Structure du projet
