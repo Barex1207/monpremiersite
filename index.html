@@ -2,69 +2,820 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Nagode Transfert – Transport & Envoi de colis</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nagode Transfert - Voyagez, Envoyez, Transférez en toute sécurité</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body>
-
-<!-- HEADER -->
-<header class="hero">
-    <div class="hero-content">
-        <h1>NAGODE TRANSFERT</h1>
-        <p>Transport et envoi de colis en toute confiance</p>
-        <div class="hero-buttons">
-            <a href="suivi.html" class="btn">Suivi de colis</a>
-            <a href="#contact" class="btn secondary">Nous contacter</a>
+    <!-- ============================================
+         HEADER / NAVIGATION
+         ============================================ -->
+    <header class="header-violet">
+        <div class="container">
+            <nav class="navbar">
+                
+                <div class="logo">
+                    <img src="C:\Users\KIMO\Documents\CODE\nagode-transfet\image\logo.png.jpg">
+                    <!--<div class="logo-icon">NT</div> -->
+                    <span class="logo-text">NAGODE<span class="logo-highlight">TRANSFERT</span></span>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li class="dropdown">
+                        <a href="#voyage" class="dropdown-toggle">Voyage <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#reserver"><i class="fas fa-calendar-check"></i> Réserver</a></li>
+                            <li><a href="#tarifs"><i class="fas fa-tags"></i> Tarifs</a></li>
+                            <li><a href="#horaires"><i class="fas fa-clock"></i> Horaires</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#actualite">Actualité</a></li>
+                    <li><a href="#suggestion">Suggestion</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
         </div>
-    </div>
-</header>
+    </header>
 
-<!-- SERVICES -->
-<section class="services">
-    <h2>Nos services</h2>
-    <div class="grid">
-        <div class="card">🚚 Transport de colis</div>
-        <div class="card">🌍 Envoi national & international</div>
-        <div class="card">📦 Suivi et gestion</div>
-        <div class="card">🤝 Service client</div>
-    </div>
-</section>
+    <!-- ============================================
+         SECTION 1 : HERO AVEC CALCULATEUR
+         ============================================ -->
+    <section class="hero" id="accueil">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <h1 class="hero-title">Voyagez, Envoyez, Transférez</h1>
+                    <p class="hero-subtitle">en toute <span class="security-text">sécurité</span></p>
+                    <p class="hero-description">
+                        Réservez votre trajet, suivez vos colis, ou effectuez des transferts d'argent facilement et en toute confiance.
+                    </p>
+                    <div class="hero-features">
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Sécurité garantie</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Service 24h/24</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-headset"></i>
+                            <span>Support dédié</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-calculator">
+                    <div class="calculator-card">
+                        <div class="calculator-tabs">
+                            <button class="tab-btn active" data-tab="transport">
+                                <i class="fas fa-bus"></i> Transport
+                            </button>
+                            <button class="tab-btn" data-tab="colis">
+                                <i class="fas fa-box"></i> Colis
+                            </button>
+                        </div>
+                        
+                        <!-- Tab Transport -->
+                        <div class="tab-content active" id="transport-tab">
+                            <div class="trip-type">
+                                <button class="trip-btn active" data-trip="aller-simple">Aller simple</button>
+                                <button class="trip-btn" data-trip="aller-retour">Aller-retour</button>
+                            </div>
+                            
+                            <!-- Formulaire Aller simple (visible par défaut) -->
+                            <form class="transport-form active" id="aller-simple-form">
+                                <div class="form-group">
+                                    <label for="departure"><i class="fas fa-map-marker-alt"></i> Ville de départ</label>
+                                    <select id="departure" required>
+                                        <option value="">Sélectionnez</option>
+                                        <option value="cotonou">Cotonou</option>
+                                        <option value="lome">Lomé</option>
+                                        <option value="accra">Accra</option>
+                                        <option value="abidjan">Abidjan</option>
+                                        <option value="ouaga">Ouagadougou</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="arrival"><i class="fas fa-map-marker"></i> Ville d'arrivée</label>
+                                    <select id="arrival" required>
+                                        <option value="">Sélectionnez</option>
+                                        <option value="cotonou">Cotonou</option>
+                                        <option value="lome">Lomé</option>
+                                        <option value="accra">Accra</option>
+                                        <option value="abidjan">Abidjan</option>
+                                        <option value="ouaga">Ouagadougou</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="travel-date"><i class="fas fa-calendar-alt"></i> Date de voyage</label>
+                                    <input type="date" id="travel-date" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="passengers"><i class="fas fa-user-friends"></i> Nombre de passagers</label>
+                                    <div class="passenger-selector">
+                                        <button type="button" class="passenger-btn minus">-</button>
+                                        <input type="number" id="passengers" value="1" min="1" max="10" readonly>
+                                        <button type="button" class="passenger-btn plus">+</button>
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    <i class="fas fa-search"></i> Rechercher un voyage
+                                </button>
+                            </form>
+                            
+                            <!-- Formulaire Aller-retour (caché par défaut) -->
+                            <form class="transport-form" id="aller-retour-form" style="display: none;">
+                                <div class="form-group">
+                                    <label for="departure-rt"><i class="fas fa-map-marker-alt"></i> Ville de départ</label>
+                                    <select id="departure-rt" required>
+                                        <option value="">Sélectionnez</option>
+                                        <option value="cotonou">Cotonou</option>
+                                        <option value="lome">Lomé</option>
+                                        <option value="accra">Accra</option>
+                                        <option value="abidjan">Abidjan</option>
+                                        <option value="ouaga">Ouagadougou</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="arrival-rt"><i class="fas fa-map-marker"></i> Ville de destination</label>
+                                    <select id="arrival-rt" required>
+                                        <option value="">Sélectionnez</option>
+                                        <option value="cotonou">Cotonou</option>
+                                        <option value="lome">Lomé</option>
+                                        <option value="accra">Accra</option>
+                                        <option value="abidjan">Abidjan</option>
+                                        <option value="ouaga">Ouagadougou</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group half">
+                                        <label for="date-aller"><i class="fas fa-calendar-alt"></i> Date aller</label>
+                                        <input type="date" id="date-aller" required>
+                                    </div>
+                                    <div class="form-group half">
+                                        <label for="date-retour"><i class="fas fa-calendar-alt"></i> Date retour</label>
+                                        <input type="date" id="date-retour" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="passengers-rt"><i class="fas fa-user-friends"></i> Nombre de passagers</label>
+                                    <div class="passenger-selector">
+                                        <button type="button" class="passenger-btn minus">-</button>
+                                        <input type="number" id="passengers-rt" value="1" min="1" max="10" readonly>
+                                        <button type="button" class="passenger-btn plus">+</button>
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    <i class="fas fa-search"></i> Rechercher un voyage
+                                </button>
+                            </form>
+                        </div>
+                        
+                        <!-- Tab Colis -->
+                        <div class="tab-content" id="colis-tab">
+                            <div class="colis-info">
+                                <p><i class="fas fa-info-circle"></i> Entrez votre numéro de suivi et sélectionnez la destination pour obtenir le numéro de suivi local.</p>
+                            </div>
+                            
+                            <form class="colis-form" id="colis-form">
+                                <div class="form-group">
+                                    <label for="tracking-number"><i class="fas fa-barcode"></i> Numéro de suivi</label>
+                                    <input type="text" id="tracking-number" placeholder="Ex: NT-2024-ABC123" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="colis-departure"><i class="fas fa-map-marker-alt"></i> Ville de départ</label>
+                                    <select id="colis-departure" required>
+                                        <option value="">Sélectionnez la ville</option>
+                                        <option value="cotonou">Cotonou</option>
+                                        <option value="lome">Lomé</option>
+                                        <option value="accra">Accra</option>
+                                        <option value="abidjan">Abidjan</option>
+                                        <option value="ouaga">Ouagadougou</option>
+                                        <option value="kara">Kara</option>
+                                        <option value="sokode">Sokodé</option>
+                                        <option value="dapaong">Dapaong</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="colis-destination"><i class="fas fa-map-marker"></i> Ville de destination</label>
+                                    <select id="colis-destination" required>
+                                        <option value="">Sélectionnez la destination</option>
+                                        <option value="cotonou">Cotonou</option>
+                                        <option value="lome">Lomé</option>
+                                        <option value="accra">Accra</option>
+                                        <option value="abidjan">Abidjan</option>
+                                        <option value="ouaga">Ouagadougou</option>
+                                        <option value="kara">Kara</option>
+                                        <option value="sokode">Sokodé</option>
+                                        <option value="dapaong">Dapaong</option>
+                                    </select>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    <i class="fas fa-search"></i> Suivre le colis
+                                </button>
+                            </form>
+                            
+                            <!-- Résultat du suivi -->
+                            <div class="tracking-result" id="tracking-result" style="display: none;">
+                                <div class="result-header">
+                                    <i class="fas fa-box-open"></i>
+                                    <h3>Informations de suivi</h3>
+                                </div>
+                                
+                                <div class="result-details">
+                                    <div class="result-item">
+                                        <span class="result-label">Numéro de suivi:</span>
+                                        <span class="result-value" id="result-tracking-number"></span>
+                                    </div>
+                                    
+                                    <div class="result-item">
+                                        <span class="result-label">Ville de départ:</span>
+                                        <span class="result-value" id="result-departure"></span>
+                                    </div>
+                                    
+                                    <div class="result-item">
+                                        <span class="result-label">Ville de destination:</span>
+                                        <span class="result-value" id="result-destination"></span>
+                                    </div>
+                                    
+                                    <div class="result-item">
+                                        <span class="result-label">Statut:</span>
+                                        <span class="result-status" id="result-status">En transit</span>
+                                    </div>
+                                    
+                                    <div class="result-item">
+                                        <span class="result-label">Dernière mise à jour:</span>
+                                        <span class="result-value" id="result-update">Aujourd'hui, 10:30 AM</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="tracking-number-info">
+                                    <div class="phone-icon">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                    <div class="phone-info">
+                                        <p class="phone-title">Pour suivre votre colis, appelez:</p>
+                                        <p class="phone-number" id="result-phone-number"></p>
+                                        <p class="phone-note">Service disponible du lundi au samedi, 8h-18h</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="result-actions">
+                                    <button class="btn btn-outline" id="copy-number">
+                                        <i class="fas fa-copy"></i> Copier le numéro
+                                    </button>
+                                    <button class="btn btn-primary" id="call-now">
+                                        <i class="fas fa-phone"></i> Appeler maintenant
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">20K+</span>
+                    <span class="stat-text">Clients satisfaits</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">25+</span>
+                    <span class="stat-text">Villes desservies</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-text">Support client</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">5★</span>
+                    <span class="stat-text">Note moyenne</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- DESTINATIONS -->
-<section class="destinations">
-    <h2>Nos destinations</h2>
-    <p>
-        Lomé, Notsè, Atakpamé, Kpalimé, Anié, Blita, Sokodé, Tchamba, Kaboli, Kara, Mango, Dapaong 
-        <br>
-        Accra, Kasoa, Côte d’Ivoire (et bientôt Burkina Faso, Bénin))
-    </p>
-</section>
+    <!-- ============================================
+         SECTION 2 : SERVICES
+         ============================================ -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nos Services</h2>
+                <p>Découvrez tous les services que nous offrons pour simplifier vos déplacements et transactions</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <h3>Voyage en bus</h3>
+                    <p>Réservez votre place dans des bus confortables avec des chauffeurs expérimentés.</p>
+                    <a href="#" class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <h3>Envoi de colis</h3>
+                    <p>Envoyez et suivez vos colis en temps réel à travers l'Afrique de l'Ouest.</p>
+                    <a href="#" class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-money-bill-transfer"></i>
+                    </div>
+                    <h3>Transfert d'argent</h3>
+                    <p>Effectuez des transferts d'argent sécurisés et rapides vers plusieurs pays.</p>
+                    <a href="#" class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- MAP -->
-<section class="map">
-    <h2>Nous localiser</h2>
-    <iframe 
-        src="COLLE_ICI_TA_CARTE_GOOGLE_MAPS"
-        width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
-    </iframe>
-</section>
+    <!-- ============================================
+         SECTION 3 : UNE NOUVELLE FAÇON DE VOYAGER
+         ============================================ -->
+    <section class="section voyage" id="voyage">
+        <div class="container">
+            <div class="voyage-content">
+                <div class="voyage-text">
+                    <h2>Une nouvelle façon de voyager</h2>
+                    <p>Voyagez dans des bus confortables avec des chauffeurs expérimentés. Profitez d'un service premium à des prix accessibles.</p>
+                    <ul class="voyage-list">
+                        <li><i class="fas fa-check-circle"></i> Confort et sécurité garantis</li>
+                        <li><i class="fas fa-check-circle"></i> Wi-Fi gratuit à bord</li>
+                        <li><i class="fas fa-check-circle"></i> Réservation en ligne facile</li>
+                        <li><i class="fas fa-check-circle"></i> Climatisation dans tous les bus</li>
+                    </ul>
+                    <button class="btn btn-primary">Réserver un voyage</button>
+                </div>
+                <div class="voyage-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-bus"></i>
+                        <span>Image de bus confortable</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-    <h2>Contactez-nous</h2>
+    <!-- ============================================
+         SECTION 4 : PARCOUREZ L'AFRIQUE
+         ============================================ -->
+    <section class="section parcours" id="parcours">
+        <div class="container">
+            <div class="section-header">
+                <h2>Parcourez l'Afrique avec <span class="brand-name">Nagode Transfert</span></h2>
+                <p>Nous sommes également présents dans la sous-région fructueuse à savoir le Bénin, le Ghana, le Togo, le Burkina Faso et la Côte d'Ivoire.</p>
+            </div>
+            
+            <!-- Grille des pays -->
+            <div class="countries-grid">
+                <!-- Bénin -->
+                <div class="country-card" data-country="benin">
+                    <div class="country-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bénin">
+                        <div class="country-overlay">
+                            <span class="flag-icon">🇧🇯</span>
+                        </div>
+                    </div>
+                    <div class="country-info">
+                        <h3>Bénin</h3>
+                        <div class="country-stats">
+                            <div class="stat">
+                                <i class="fas fa-city"></i>
+                                <span>Une Villes</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-route"></i>
+                                <span>Plusieurs destinations</span>
+                            </div>
+                        </div>
+                        <button class="btn-country">
+                            <i class="fas fa-arrow-right"></i> Voir les destinations
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Ghana -->
+                <div class="country-card" data-country="ghana">
+                    <div class="country-image">
+                        <img src="C:\Users\KIMO\Documents\CODE\nagode-transfet\image\ghana.jpg">
+                        <div class="country-overlay">
+                            <span class="flag-icon">🇬🇭</span>
+                        </div>
+                    </div>
+                    <div class="country-info">
+                        <h3>Ghana</h3>
+                        <div class="country-stats">
+                            <div class="stat">
+                                <i class="fas fa-city"></i>
+                                <span>18 villes</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-route"></i>
+                                <span>35 trajets</span>
+                            </div>
+                        </div>
+                        <button class="btn-country">
+                            <i class="fas fa-arrow-right"></i> Voir les destinations
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Togo -->
+                <div class="country-card" data-country="togo">
+                    <div class="country-image">
+                        <img src="C:\Users\KIMO\Documents\CODE\nagode-transfet\image\togo.jpg">
+                        <div class="country-overlay">
+                            <span class="flag-icon">🇹🇬</span>
+                        </div>
+                    </div>
+                    <div class="country-info">
+                        <h3>Togo</h3>
+                        <div class="country-stats">
+                            <div class="stat">
+                                <i class="fas fa-city"></i>
+                                <span>Une villes</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-route"></i>
+                                <span>Divers destinations</span>
+                            </div>
+                        </div>
+                        <button class="btn-country">
+                            <i class="fas fa-arrow-right"></i> Voir les destinations
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Burkina Faso -->
+                <div class="country-card" data-country="burkina">
+                    <div class="country-image">
+                        <img src="C:\Users\KIMO\Documents\CODE\nagode-transfet\image\bf.jpg" alt="Burkina Faso">
+                        <div class="country-overlay">
+                            <span class="flag-icon">🇧🇫</span>
+                        </div>
+                    </div>
+                    <div class="country-info">
+                        <h3>Burkina Faso</h3>
+                        <div class="country-stats">
+                            <div class="stat">
+                                <i class="fas fa-city"></i>
+                                <span>15 villes</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-route"></i>
+                                <span>28 trajets</span>
+                            </div>
+                        </div>
+                        <button class="btn-country">
+                            <i class="fas fa-arrow-right"></i> Voir les destinations
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Côte d'Ivoire -->
+                <div class="country-card" data-country="cote-ivoire">
+                    <div class="country-image">
+                        <img src="https://images.unsplash.com/photo-1545424465-63c1c8f5f7dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Côte d'Ivoire">
+                        <div class="country-overlay">
+                            <span class="flag-icon">🇨🇮</span>
+                        </div>
+                    </div>
+                    <div class="country-info">
+                        <h3>Côte d'Ivoire</h3>
+                        <div class="country-stats">
+                            <div class="stat">
+                                <i class="fas fa-city"></i>
+                                <span>20 villes</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-route"></i>
+                                <span>40 trajets</span>
+                            </div>
+                        </div>
+                        <button class="btn-country">
+                            <i class="fas fa-arrow-right"></i> Voir les destinations
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section des services (avec redirection) -->
+            <div class="services-redirect">
+                <h3>Nos Services Principaux</h3>
+                <div class="services-buttons">
+                    <button class="service-redirect-btn" data-target="transport">
+                        <div class="service-icon">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <div class="service-text">
+                            <h4>Transport de passagers</h4>
+                            <p>Réservez votre voyage en toute simplicité</p>
+                        </div>
+                        <i class="fas fa-arrow-right arrow-icon"></i>
+                    </button>
+                    
+                    <button class="service-redirect-btn" data-target="colis">
+                        <div class="service-icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <div class="service-text">
+                            <h4>Suivi de colis</h4>
+                            <p>Suivez votre colis en temps réel</p>
+                        </div>
+                        <i class="fas fa-arrow-right arrow-icon"></i>
+                    </button>
+                    
+                    <button class="service-redirect-btn" data-target="transfert">
+                        <div class="service-icon">
+                            <i class="fas fa-money-bill-transfer"></i>
+                        </div>
+                        <div class="service-text">
+                            <h4>Transfert d'argent</h4>
+                            <p>Envoyez de l'argent rapidement et sécurisé</p>
+                        </div>
+                        <i class="fas fa-arrow-right arrow-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <form action="https://formspree.io/f/XXXXXX" method="POST">
-        <input type="text" name="nom" placeholder="Votre nom" required>
-        <input type="email" name="email" placeholder="Votre email" required>
-        <textarea name="message" placeholder="Votre message" required></textarea>
-        <button class="btn">Envoyer</button>
-    </form>
-</section>
+    <!-- ============================================
+         SECTION 5 : APPLICATION MOBILE
+         ============================================ -->
+    <section class="section app-mobile" id="app-mobile">
+        <div class="container">
+            <div class="app-grid">
+                <!-- Colonne gauche : Texte et boutons -->
+                <div class="app-content">
+                    <div class="section-header left-align">
+                        <h2>Téléchargez notre app mobile</h2>
+                        <p class="app-description">Réservez, suivez et transférez en toute simplicité grâce à notre application mobile gratuite.</p>
+                    </div>
+                    
+                    <!-- Boutons de téléchargement -->
+                    <div class="download-buttons">
+                        <a href="#" class="app-store-btn">
+                            <div class="btn-icon">
+                                <i class="fab fa-apple"></i>
+                            </div>
+                            <div class="btn-text">
+                                <span>Télécharger sur</span>
+                                <strong>App Store</strong>
+                            </div>
+                        </a>
+                        
+                        <a href="#" class="play-store-btn">
+                            <div class="btn-icon">
+                                <i class="fab fa-google-play"></i>
+                            </div>
+                            <div class="btn-text">
+                                <span>Disponible sur</span>
+                                <strong>Google Play</strong>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Avantages de l'application -->
+                    <div class="app-features">
+                        <div class="feature">
+                            <div class="feature-icon security">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Sécurité Garantie</h3>
+                                <div class="specs">
+                                    <span class="spec">1024 x 1536</span>
+                                    <span class="spec">2.4 Mo</span>
+                                </div>
+                                <p class="feature-desc">Vos données sont cryptées et protégées.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature">
+                            <div class="feature-icon support">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Assistance 24/7</h3>
+                                <div class="specs">
+                                    <span class="spec">Nos Agences</span>
+                                </div>
+                                <p class="feature-desc">Support disponible dans toutes nos agences.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Colonne droite : Mockup du téléphone -->
+                <div class="app-preview">
+                    <div class="phone-mockup-large">
+                        <div class="phone-frame">
+                            <div class="phone-notch">
+                                <div class="speaker"></div>
+                                <div class="camera"></div>
+                            </div>
+                            
+                            <!-- Écran de l'app -->
+                            <div class="phone-screen">
+                                <div class="app-header">
+                                    <div class="app-logo-large">
+                                        <span>NT</span>
+                                    </div>
+                                    <div class="app-header-text">
+                                        <h4>Nagode Transfert</h4>
+                                        <p>Votre voyage, simplifié</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="app-menu">
+                                    <div class="menu-item active">
+                                        <i class="fas fa-home"></i>
+                                        <span>Accueil</span>
+                                    </div>
+                                    <div class="menu-item">
+                                        <i class="fas fa-bus"></i>
+                                        <span>Voyage</span>
+                                    </div>
+                                    <div class="menu-item">
+                                        <i class="fas fa-box"></i>
+                                        <span>Colis</span>
+                                    </div>
+                                    <div class="menu-item">
+                                        <i class="fas fa-wallet"></i>
+                                        <span>Transfert</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="app-content-screen">
+                                    <div class="welcome-message">
+                                        <h5>Bonjour, Koffi!</h5>
+                                        <p>Que voulez-vous faire aujourd'hui?</p>
+                                    </div>
+                                    
+                                    <div class="quick-actions">
+                                        <button class="quick-btn">
+                                            <i class="fas fa-ticket-alt"></i>
+                                            <span>Réserver</span>
+                                        </button>
+                                        <button class="quick-btn">
+                                            <i class="fas fa-search"></i>
+                                            <span>Suivre</span>
+                                        </button>
+                                        <button class="quick-btn">
+                                            <i class="fas fa-exchange-alt"></i>
+                                            <span>Transférer</span>
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="recent-trips">
+                                        <h6>Derniers voyages</h6>
+                                        <div class="trip-item">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <div class="trip-info">
+                                                <span>Cotonou → Lomé</span>
+                                                <small>Aujourd'hui, 14:30</small>
+                                            </div>
+                                            <span class="trip-status confirmed">Confirmé</span>
+                                        </div>
+                                        <div class="trip-item">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <div class="trip-info">
+                                                <span>Accra → Abidjan</span>
+                                                <small>Demain, 08:00</small>
+                                            </div>
+                                            <span class="trip-status pending">En attente</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Spécifications techniques affichées -->
+                                <div class="tech-specs">
+                                    <div class="spec-item">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <span>1024 x 1536</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-download"></i>
+                                        <span>2.4 Mo</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.8/5</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="phone-button"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Badge "Gratuit" -->
+                    <div class="free-badge">
+                        <i class="fas fa-gift"></i>
+                        <span>Application 100% gratuite</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    © 2026 Nagode Transfert – Tous droits réservés
-</footer>
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="logo">
+                        <div class="logo-icon">NT</div>
+                        <span class="logo-text">NAGODE<span class="logo-highlight">TRANSFERT</span></span>
+                    </div>
+                    <p class="footer-description">
+                        Votre partenaire de confiance pour les voyages, l'envoi de colis et les transferts d'argent en Afrique de l'Ouest.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Réservation de bus</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Envoi de colis</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Transfert d'argent</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Suivi en temps réel</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Assurance voyage</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Entreprise</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> À propos</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Carrières</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Presse</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Partenaires</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Cotonou, Bénin</li>
+                        <li><i class="fas fa-phone"></i> +229 XX XX XX XX</li>
+                        <li><i class="fas fa-envelope"></i> contact@nagodetransfert.com</li>
+                        <li><i class="fas fa-clock"></i> Lun - Ven: 8h-18h</li>
+                    </ul>
+                    <div class="newsletter">
+                        <h4>Newsletter</h4>
+                        <p>Inscrivez-vous pour recevoir nos offres</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Votre email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Nagode Transfert. Tous droits réservés.</p>
+                <div class="footer-links">
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Conditions d'utilisation</a>
+                    <a href="#">Cookies</a>
+                    <a href="#">Mentions légales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
